@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Age Prediction System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-gradient-start: #e9f3f8;
+            --background-gradient-end: #f0f4f7;
+            --text-color: #333;
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .video-section {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .video-container {
+            border: 4px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 640px;
+            height: 480px;
+            background-color: #f9f9f9;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .info-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .video-container {
+                height: auto;
+                aspect-ratio: 4/3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>
+            <span>🤖</span>
+            AI Age Prediction System
+            <span>📊</span>
+        </h1>
+    </header>
+
+    <div class="container">
+        <section class="video-section">
+            <h2>
+                <span>📸</span>
+                Smile and Let AI Predict Your Age!
+                <span>🔍</span>
+            </h2>
+            <div class="video-container">
+                <img id="video" src="{{ url_for('video_feed') }}" alt="Live Video Stream">
+            </div>
+        </section>
+
+        <div class="info-box">
+            <p>🧠 Our AI is analyzing your appearance with precision...</p>
+            <p>🌟 Pro Tip: A genuine smile helps make the prediction more accurate! 😊</p>
+            <p>🚀 Machine Learning Magic in Progress! ✨</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span>🏆</span>
+        Developed for ISMT Tech Expo 2024
+        <span>💻</span>
+    </footer>
+</body>
+</html>

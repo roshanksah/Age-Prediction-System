@@ -1,0 +1,29 @@
+flowchart TD
+    A[User Opens Web App] --> B[Frontend Requests Video Stream]
+    B --> C[Flask Backend Starts Video Capture]
+    C --> D[Capture Frame using OpenCV]
+    D --> E{Face Detected?}
+    E -->|Yes| F[Extract Face Coordinates using OpenCV]
+    E -->|No| G[Show 'No Face Detected' on Video Stream]
+    F --> H[Preprocess Face for Age Prediction]
+    H --> I[Pass Face Blob to Age Prediction Model]
+    I --> J[Predict Age Class]
+    J --> K[Overlay Age Prediction on Video Frame]
+    K --> L[Send Processed Video Frame to Frontend]
+    L --> M[Display Live Video Stream with Predictions]
+    M --> A
+
+    %% Style for better visibility
+    style A fill:#ff6666,stroke:#333,stroke-width:2px,color:#ffffff;
+    style B fill:#ff9966,stroke:#333,stroke-width:2px,color:#ffffff;
+    style C fill:#ffcc66,stroke:#333,stroke-width:2px,color:#000000;
+    style D fill:#99cc66,stroke:#333,stroke-width:2px,color:#000000;
+    style E fill:#6699ff,stroke:#333,stroke-width:2px,color:#ffffff;
+    style F fill:#66cc99,stroke:#333,stroke-width:2px,color:#000000;
+    style G fill:#ff6666,stroke:#333,stroke-width:2px,color:#ffffff;
+    style H fill:#ffcc99,stroke:#333,stroke-width:2px,color:#000000;
+    style I fill:#ff9966,stroke:#333,stroke-width:2px,color:#ffffff;
+    style J fill:#ff6666,stroke:#333,stroke-width:2px,color:#ffffff;
+    style K fill:#6699cc,stroke:#333,stroke-width:2px,color:#ffffff;
+    style L fill:#cc99ff,stroke:#333,stroke-width:2px,color:#ffffff;
+    style M fill:#9966ff,stroke:#333,stroke-width:2px,color:#ffffff;
